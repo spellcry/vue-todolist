@@ -54,8 +54,5 @@ const app = new Vue({
             this.todos.push(newTodoObj);
             this.newTodo = '';
         },
-        enterKeyPress() {
-
-        },
     }
 });
