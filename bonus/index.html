@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/01de7d5bf8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <header>
+            <div class="container">
+                <h1>TodoList</h1>
+            </div>
+        </header>
+
+        <main>
+            <div class="container new-todo__wrapper">
+                <input type="text" v-model="newTodo">
+                <input @click="addTodo" type="button" value="Aggiungi">
+            </div>
+
+            <div class="container">
+                <ul class="todolist">
+                    <li v-for="todo in todos" :class="[todo.done ? 'done' : '', classeTodo]">
+                        {{ todo.text }}
+                        <i @click="toggleDoneOf(todo)" class="fas fa-xmark"></i>
+                    </li>
+                </ul>
+            </div>
+
+        </main>
+
+    </div>
+
+    <script type="text/javascript" src="./js/scripts.js"></script>
+</body>
+
+</html>
