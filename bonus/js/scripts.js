@@ -23,6 +23,7 @@ const app = new Vue({
         name: 'TodoList',
         todos,
         classeTodo: 'todo',
+        classeIcon: 'fas',
         newTodo: '',
     },
     computed: {

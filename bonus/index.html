@@ -18,15 +18,15 @@
 
     <div id="app">
 
-        <header>
+        <header class="main-header">
             <div class="container">
-                <h1>TodoList</h1>
+                <h1 class="main-header__title">TodoList</h1>
             </div>
         </header>
 
         <main>
             <div class="container new-todo__wrapper">
-                <input @keyup.enter="addTodo" type="text" v-model="newTodo">
+                <input @keyup.enter="addTodo" type="text" v-model="newTodo" placeholder="Inserisci un task">
                 <input @click="addTodo" type="button" value="Aggiungi">
             </div>
 
@@ -37,7 +37,7 @@
                         <div @click="toggleDoneOf(todo)" class="todo__text">
                             {{ todo.text }}
                         </div>
-                        <i @click="toggleDoneOf(todo)" class="fas fa-xmark"></i>
+                        <i @click="toggleDoneOf(todo)" :class="[classeIcon, !todo.done ? 'fa-xmark' : '']"></i>
                     </li>
                 </ul>
             </div>
@@ -49,7 +49,7 @@
                         <div @click="toggleDoneOf(todo)" class="todo__text">
                             {{ todo.text }}
                         </div>
-                        <i @click="toggleDoneOf(todo)" class="fa-solid fa-check"></i>
+                        <i @click="toggleDoneOf(todo)" :class="[classeIcon, todo.done ? 'fa-check' : '']"></i>
                     </li>
                 </ul>
             </div>

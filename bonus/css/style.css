@@ -46,6 +46,14 @@ input {
 
 /* #endregion Container */
 
+/* #region Main Header */
+.main-header__title {
+    text-align: center;
+    padding-block: 2rem
+}
+
+/* #endregion Main Header */
+
 /* #region Todo List */
 .new-todo__wrapper {
     padding: 12px 1rem;
