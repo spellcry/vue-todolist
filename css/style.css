@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 /* #region Regole Reset */
 * {
     box-sizing: border-box;
@@ -5,4 +7,57 @@
     padding: 0;
 }
 
+ul,
+ol,
+menu {
+    list-style: none;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    background-color: rgb(221, 221, 221);
+}
+
+input {
+    font-weight: bold;
+    padding: 5px;
+}
+
 /* #endregion Regole Reset */
+
+/* #region Utilities */
+.done {
+    color: grey;
+    text-decoration: line-through;
+}
+
+/* #endregion Utilities */
+
+/* #region Container */
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+/* #endregion Container */
+
+/* #region Todo List */
+.new-todo__wrapper {
+    padding: 12px 1rem;
+}
+
+.todolist {
+    padding: 12px 0 24px;
+}
+
+.todo {
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 10px;
+    background-color: #fff;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+/* #endregion Todo List */

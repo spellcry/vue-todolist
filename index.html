@@ -10,9 +10,33 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- VUE -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/01de7d5bf8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
+    <div id="app">
+
+        <header>
+            <div class="container">
+                <h1>TodoList</h1>
+            </div>
+        </header>
+
+        <main>
+
+            <div class="container">
+                <ul class="todolist">
+                    <li v-for="todo in todos" :class="[todo.done ? 'done' : '', classeTodo]">
+                        {{ todo.text }}
+                    </li>
+                </ul>
+            </div>
+
+        </main>
+
+    </div>
 
     <script type="text/javascript" src="./js/scripts.js"></script>
 </body>
