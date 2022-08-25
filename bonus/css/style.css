@@ -26,9 +26,13 @@ input {
 /* #endregion Regole Reset */
 
 /* #region Utilities */
-.done {
+.done .todo__text {
     color: grey;
     text-decoration: line-through;
+}
+
+.done .fa-check {
+    color: green;
 }
 
 /* #endregion Utilities */
@@ -60,6 +64,11 @@ input {
     background-color: #fff;
     border-radius: 3px;
     margin-bottom: 5px;
+}
+
+.todo__text,
+.todo i {
+    cursor: pointer;
 }
 
 .todo i {

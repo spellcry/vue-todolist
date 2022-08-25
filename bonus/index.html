@@ -26,15 +26,30 @@
 
         <main>
             <div class="container new-todo__wrapper">
-                <input type="text" v-model="newTodo">
+                <input @keyup.enter="addTodo" type="text" v-model="newTodo">
                 <input @click="addTodo" type="button" value="Aggiungi">
             </div>
 
             <div class="container">
+                <h2>Todo</h2>
                 <ul class="todolist">
-                    <li v-for="todo in todos" :class="[todo.done ? 'done' : '', classeTodo]">
-                        {{ todo.text }}
+                    <li v-for="todo in todosNotDone" :class="[todo.done ? 'done' : '', classeTodo]">
+                        <div @click="toggleDoneOf(todo)" class="todo__text">
+                            {{ todo.text }}
+                        </div>
                         <i @click="toggleDoneOf(todo)" class="fas fa-xmark"></i>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container">
+                <h2>Done</h2>
+                <ul class="todolist">
+                    <li v-for="todo in todosDone" :class="[todo.done ? 'done' : '', classeTodo]">
+                        <div @click="toggleDoneOf(todo)" class="todo__text">
+                            {{ todo.text }}
+                        </div>
+                        <i @click="toggleDoneOf(todo)" class="fa-solid fa-check"></i>
                     </li>
                 </ul>
             </div>

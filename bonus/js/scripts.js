@@ -25,6 +25,20 @@ const app = new Vue({
         classeTodo: 'todo',
         newTodo: '',
     },
+    computed: {
+        todosNotDone() {
+            const todosDone = this.todos.filter(todo => {
+                return todo.done === false;
+            })
+            return todosDone;
+        },
+        todosDone() {
+            const todosDone = this.todos.filter(todo => {
+                return todo.done === true;
+            })
+            return todosDone;
+        },
+    },
     methods: {
         toggleDoneOf(todo) {
             todo.done = !todo.done;
@@ -38,6 +52,9 @@ const app = new Vue({
             };
             this.todos.push(newTodoObj);
             this.newTodo = '';
+        },
+        enterKeyPress() {
+
         },
     }
 });
