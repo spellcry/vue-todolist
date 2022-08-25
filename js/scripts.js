@@ -29,5 +29,15 @@ const app = new Vue({
         toggleDoneOf(todo) {
             todo.done = !todo.done;
         },
+        addTodo() {
+            this.newTodo = this.newTodo.trim();
+            if (!this.newTodo) return;
+            const newTodoObj = {
+                text: this.newTodo, 
+                done: false
+            };
+            this.todos.push(newTodoObj);
+            this.newTodo = '';
+        },
     }
 });
