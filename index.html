@@ -30,6 +30,7 @@
                 <ul class="todolist">
                     <li v-for="todo in todos" :class="[todo.done ? 'done' : '', classeTodo]">
                         {{ todo.text }}
+                        <i @click="toggleDoneOf(todo)" class="fas fa-xmark"></i>
                     </li>
                 </ul>
             </div>

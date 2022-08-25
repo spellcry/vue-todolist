@@ -25,4 +25,9 @@ const app = new Vue({
         classeTodo: 'todo',
         newTodo: '',
     },
+    methods: {
+        toggleDoneOf(todo) {
+            todo.done = !todo.done;
+        },
+    }
 });

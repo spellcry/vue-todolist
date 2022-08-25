@@ -52,12 +52,18 @@ input {
 }
 
 .todo {
+    display: flex;
+    align-items: center;
     font-weight: bold;
     font-size: 1rem;
     padding: 8px 10px;
     background-color: #fff;
     border-radius: 3px;
     margin-bottom: 5px;
+}
+
+.todo i {
+    margin-left: auto;
 }
 
 /* #endregion Todo List */
