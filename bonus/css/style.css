@@ -15,7 +15,7 @@ menu {
 
 html {
     font-family: 'Open Sans', sans-serif;
-    background-color: rgb(221, 221, 221);
+    background-color: cornflowerblue;
 }
 
 input {
@@ -72,6 +72,10 @@ input {
     background-color: #fff;
     border-radius: 3px;
     margin-bottom: 5px;
+}
+
+.todo:hover {
+    background-color: #ddd;
 }
 
 .todo__text,
