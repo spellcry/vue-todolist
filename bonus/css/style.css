@@ -20,7 +20,14 @@ html {
 
 input {
     font-weight: bold;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    font-size: 1rem;
+}
+
+input[type="button"] {
+    cursor: pointer;
 }
 
 /* #endregion Regole Reset */
