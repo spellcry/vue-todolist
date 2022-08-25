@@ -30,6 +30,10 @@ input[type="button"] {
     cursor: pointer;
 }
 
+input[type="button"]:hover {
+    background-color: #ddd;
+}
+
 /* #endregion Regole Reset */
 
 /* #region Utilities */
