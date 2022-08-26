@@ -42,10 +42,6 @@ input[type="button"]:hover {
     text-decoration: line-through;
 }
 
-.done .fa-check {
-    color: green;
-}
-
 /* #endregion Utilities */
 
 /* #region Container */
@@ -74,7 +70,31 @@ input[type="button"]:hover {
     padding: 12px 0 24px;
 }
 
+.todolist .fa-check {
+    color: green;
+}
+
+.todolist .done .fa-check {
+    color: black;
+}
+
+.todolist .done .fa-check.done {
+    color: green;
+    margin-right: 5px;
+}
+
+.todolist .fa-xmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    background-color: red;
+    color: #fff;
+    border-radius: 3px;
+}
+
 .todo {
+    position: relative;
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -94,8 +114,46 @@ input[type="button"]:hover {
     cursor: pointer;
 }
 
-.todo i {
+.todo i.done {
+    cursor: auto;
+}
+
+.todo .fa-ellipsis {
     margin-left: auto;
 }
 
 /* #endregion Todo List */
+
+/* #region Options */
+.options {
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    bottom: 10px;
+    gap: 10px;
+    animation: showOptions 300ms linear 1;
+}
+
+.options.visible {
+    display: flex;
+}
+
+/* #endregion Options */
+
+@keyframes showOptions {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    20% {
+        display: flex;
+        opacity: 0;
+    }
+
+    100% {
+        display: flex;
+        opacity: 1;
+    }
+}

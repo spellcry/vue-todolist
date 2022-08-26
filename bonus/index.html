@@ -37,7 +37,11 @@
                         <div @click="toggleDoneOf(todo)" class="todo__text">
                             {{ todo.text }}
                         </div>
-                        <i @click="toggleDoneOf(todo)" :class="[classeIcon, !todo.done ? 'fa-xmark' : '']"></i>
+                        <i @click="toggleOptions(todo)" class="fa-solid fa-ellipsis"></i>
+                        <div :class="['options', todo.optionsVisible ? 'visible' : '']">
+                            <i @click="delTodo(todo)" :class="[classeIcon, 'fa-xmark']"></i>
+                            <i @click="toggleDoneOf(todo)" :class="[classeIcon, 'fa-check']"></i>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -47,9 +51,14 @@
                 <ul class="todolist">
                     <li v-for="todo in todosDone" :class="[todo.done ? 'done' : '', classeTodo]">
                         <div @click="toggleDoneOf(todo)" class="todo__text">
+                            <i :class="[classeIcon, 'fa-check done']"></i>
                             {{ todo.text }}
                         </div>
-                        <i @click="toggleDoneOf(todo)" :class="[classeIcon, todo.done ? 'fa-check' : '']"></i>
+                        <i @click="toggleOptions(todo)" class="fa-solid fa-ellipsis"></i>
+                        <div :class="['options', todo.optionsVisible ? 'visible' : '']">
+                            <i @click="delTodo(todo)" :class="[classeIcon, 'fa-xmark']"></i>
+                            <i @click="toggleDoneOf(todo)" :class="[classeIcon, 'fa-check']"></i>
+                        </div>
                     </li>
                 </ul>
             </div>

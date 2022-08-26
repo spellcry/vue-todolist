@@ -2,18 +2,22 @@ const todos = [
     {
         text: 'Fare i compiti',
         done: false,
+        optionsVisible: false,
     },
     {
         text: 'Fare la spesa',
         done: true,
+        optionsVisible: false,
     },
     {
         text: 'Buttare il pattume',
         done: false,
+        optionsVisible: false,
     },
     {
         text: 'Fare la doccia',
         done: false,
+        optionsVisible: false,
     },
 ];
 
@@ -43,16 +47,25 @@ const app = new Vue({
     methods: {
         toggleDoneOf(todo) {
             todo.done = !todo.done;
+            this.optionsVisible = false;
         },
         addTodo() {
             this.newTodo = this.newTodo.trim();
             if (!this.newTodo) return;
             const newTodoObj = {
                 text: this.newTodo, 
-                done: false
+                done: false,
+                optionsVisible: false,
             };
             this.todos.push(newTodoObj);
             this.newTodo = '';
+        },
+        delTodo(todo) {
+            todos.splice(todos.indexOf(todo), 1);
+            this.optionsVisible = false;
+        },
+        toggleOptions(todo) {
+            todo.optionsVisible = !todo.optionsVisible;
         },
     }
 });
