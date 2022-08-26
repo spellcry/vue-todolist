@@ -37,11 +37,11 @@
                         <div @click="toggleDoneOf(todo)" class="todo__text">
                             {{ todo.text }}
                         </div>
-                        <i @click="toggleOptions(todo)" class="fa-solid fa-ellipsis"></i>
                         <div :class="['options', todo.optionsVisible ? 'visible' : '']">
                             <i @click="delTodo(todo)" :class="[classeIcon, 'fa-xmark']"></i>
                             <i @click="toggleDoneOf(todo)" :class="[classeIcon, 'fa-check']"></i>
                         </div>
+                        <i @click="toggleOptions(todo)" class="fa-solid fa-ellipsis"></i>
                     </li>
                 </ul>
             </div>
@@ -54,11 +54,11 @@
                             <i :class="[classeIcon, 'fa-check done']"></i>
                             {{ todo.text }}
                         </div>
-                        <i @click="toggleOptions(todo)" class="fa-solid fa-ellipsis"></i>
                         <div :class="['options', todo.optionsVisible ? 'visible' : '']">
                             <i @click="delTodo(todo)" :class="[classeIcon, 'fa-xmark']"></i>
                             <i @click="toggleDoneOf(todo)" :class="[classeIcon, 'fa-check']"></i>
                         </div>
+                        <i @click="toggleOptions(todo)" class="fa-solid fa-ellipsis"></i>
                     </li>
                 </ul>
             </div>
