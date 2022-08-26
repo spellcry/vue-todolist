@@ -47,7 +47,7 @@ const app = new Vue({
     methods: {
         toggleDoneOf(todo) {
             todo.done = !todo.done;
-            this.optionsVisible = false;
+            todo.optionsVisible = false;
         },
         addTodo() {
             this.newTodo = this.newTodo.trim();
